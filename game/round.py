@@ -20,7 +20,7 @@ def play_round(player: PlayerStrategy) -> int:
         logging.info(f"Rolled {rolled_dice}")
         selected_dice, roll_again = player.select_dice_move(rolled_dice=rolled_dice)
         logging.info(f"Selected {selected_dice}, and rolling again is {roll_again}")
-        validate_selected_dice(roll=rolled_dice, selection=selected_dice)
+        validate_selected_dice(roll=rolled_dice, selection=selected_dice, rolling_again=roll_again)
         move_score = calculate_score(dice=selected_dice)
         if move_score == 0:
             logging.info("Score for this roll was zero, round scores zero")
