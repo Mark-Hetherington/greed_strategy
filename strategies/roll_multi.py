@@ -16,11 +16,11 @@ class TakeScoresAndDontRollAgainStrategy(PlayerStrategy):
         rolled = rolled_dice.copy()
         selected_dice = []
         for score in SCORE_PRIORITY:
-            if rolled_dice.count(score[0]) > score[1]:
+            if rolled_dice.count(score[0]) >= score[1]:
                 selected_dice.extend([score[0]] * score[1])
                 for _ in range(score[1]):
                     rolled.remove(score[0])
-        for die in rolled_dice:            
+        for die in rolled:            
             if die in [DieRoll.diamond, DieRoll.gold]:
                 selected_dice.append(die)
         return selected_dice, False
