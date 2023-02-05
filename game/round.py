@@ -1,8 +1,9 @@
 import logging
 from random import choice
 from typing import List
-from game.common import DieRoll, validate_selected_dice
+from game.common import DieRoll
 from game.scoring import calculate_score
+from game.validation import validate_selected_dice
 from strategies.base import PlayerStrategy
 
 
