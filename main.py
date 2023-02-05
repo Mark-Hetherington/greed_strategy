@@ -16,3 +16,5 @@ for i in range(1000):
 
 plt.hist(scores, bins=10)
 plt.show()
+
+print(f"Average score {mean(scores)}")
